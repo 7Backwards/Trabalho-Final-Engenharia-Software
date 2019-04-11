@@ -4,6 +4,12 @@ public class Utilizador {
     private String estado;
     private TipoUtilizador tipoUti;
 
+    public Utilizador(String nome, String estado, TipoUtilizador tipoUti) {
+        this.nome = nome;
+        this.estado = estado;
+        this.tipoUti = tipoUti;
+    }
+
     public Utilizador(String nome, String estado) {
         this.nome = nome;
         this.estado = estado;
