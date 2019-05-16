@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class RepositorioMem {
+public class RepositorioMem implements Repositorio {
 
     ArrayList<Coima> coimaL = new ArrayList<>();
     ArrayList<Copia> copiaL = new ArrayList<>();

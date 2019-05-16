@@ -11,7 +11,7 @@ public class Main {
         Encomenda encomenda = new Encomenda(LocalDate.now(),requisicaoCompraCopia);
         EntradaNovoLivro entradaNovoLivro = new EntradaNovoLivro(LocalDate.now(),encomenda,c);
 
-        Repositorio repo = new Repositorio();
+        Repositorio repo = new RepositorioMem();
 
         repo.adicionaEntradaNovoLivro(entradaNovoLivro);
     }

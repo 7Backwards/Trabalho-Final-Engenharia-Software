@@ -4,7 +4,7 @@
     <root id="archive" name="ProjectBiblioteca.jar">
       <element id="module-output" name="ProjectBiblioteca" />
       <element id="directory" name="resourses">
-        <element id="file-copy" path="$USER_HOME$/Desktop/CompraDiagrama.drawio.pdf" />
+        <element id="file-copy" path="$USER_HOME$/Desktop/Biblioteca.pdf" />
       </element>
     </root>
   </artifact>
