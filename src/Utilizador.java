@@ -23,7 +23,7 @@ public class Utilizador {
         return estado;
     }
 
-    public TipoUtilizador getTipoUti() {
+   public TipoUtilizador getTipoUti() {
         return tipoUti;
     }
 }

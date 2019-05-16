@@ -16,6 +16,19 @@ public class RepositorioMem implements Repositorio {
     ArrayList<TipoUtilizador> tipoUtilizadorL = new ArrayList<>();
     ArrayList<Utilizador> utilizadorL = new ArrayList<>();
 
+    //1ºSprint
+
+    ArrayList<SalaEstudo> salaEstudoL = new ArrayList<>();
+    ArrayList<Aluno> alunoL = new ArrayList<>();
+    ArrayList<Docente> docenteL = new ArrayList<>();
+    ArrayList<Professor> professorL = new ArrayList<>();
+    ArrayList<Funcionario> funcionarioL = new ArrayList<>();
+    ArrayList<Horario> horarioL = new ArrayList<>();
+    ArrayList<Disciplina> disciplinaL = new ArrayList<>();
+
+    //-----------
+
+
 
     public RepositorioMem() {
     }
@@ -80,5 +93,49 @@ public class RepositorioMem implements Repositorio {
         }
         return null;
     }
+
+
+    //1º Sprint
+
+    public void adicionaSalaEstudo(SalaEstudo salaEstudo) {
+        salaEstudoL.add(salaEstudo);
+    }
+
+    public void adicionaAluno(Aluno aluno) {
+        alunoL.add(aluno);
+    }
+
+    public void adicionaDocente(Docente docente){
+        docenteL.add(docente);
+    }
+
+    public void adicionaProfessor(Professor professor) {
+        professorL.add(professor);
+    }
+
+    public void adicionaFuncionario(Funcionario funcionario) {
+        funcionarioL.add(funcionario);
+    }
+
+    public void adicionaHorarios(Horario horario) {
+        horarioL.add(horario);
+    }
+
+    public void adicionaDisciplina(Disciplina disciplina) {
+        disciplinaL.add(disciplina);
+    }
+
+
+    public void entradaAlunoNaSala(SalaEstudo salaEstudo, Aluno aluno){
+
+        if(salaEstudo == null || aluno == null) return;
+
+        if(salaEstudo.addAlunoSala(aluno) == true)
+            System.out.println("Foi efetuada uma nova entrada de aluno na sala!\n");
+        else
+            System.out.println("Nao foi efetuada a entrada do aluno na sala");
+
+    }
+
 
 }
