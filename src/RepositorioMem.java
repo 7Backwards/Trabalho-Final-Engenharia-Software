@@ -13,8 +13,7 @@ public class RepositorioMem implements Repositorio {
     ArrayList<PropostaAquisicao> propAquisicaoL = new ArrayList<>();
     ArrayList<Requisicao> requisicaoL = new ArrayList<>();
     ArrayList<RequisicaoCompra> requisicaoCompraL = new ArrayList<>();
-    ArrayList<TipoUtilizador> tipoUtilizadorL = new ArrayList<>();
-    ArrayList<Utilizador> utilizadorL = new ArrayList<>();
+    ArrayList<Funcionario> FuncionarioL = new ArrayList<>();
 
     //1ºSprint
 
@@ -77,13 +76,7 @@ public class RepositorioMem implements Repositorio {
         requisicaoCompraL.add(requisicaoCompra);
     }
 
-    public void adicionaTipoUtilizador(TipoUtilizador tipo) {
-        tipoUtilizadorL.add(tipo);
-    }
 
-    public void adicionaUtilizador(Utilizador utilizador) {
-        utilizadorL.add(utilizador);
-    }
 
     public Emprestimo devolveEmprestimoDaRequisicao(Requisicao r) {
 

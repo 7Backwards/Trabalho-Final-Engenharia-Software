@@ -5,4 +5,12 @@ public class Professor extends Docente {
         super(nDocente, nome);
         this.disciplina = disciplina;
     }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
 }

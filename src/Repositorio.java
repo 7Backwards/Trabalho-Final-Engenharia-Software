@@ -23,10 +23,6 @@ public interface Repositorio{
 
     public void adicionaRequisicaoCompra(RequisicaoCompra requisicaoCompra) ;
 
-    public void adicionaTipoUtilizador(TipoUtilizador tipo) ;
-
-    public void adicionaUtilizador(Utilizador utilizador);
-
     public Emprestimo devolveEmprestimoDaRequisicao(Requisicao r);
 
     //1º Sprint
