@@ -128,7 +128,17 @@ public class RepositorioMem implements Repositorio {
         if(salaEstudo.addAlunoSala(aluno) == true)
             System.out.println("Foi efetuada uma nova entrada de aluno na sala!\n");
         else
-            System.out.println("Nao foi efetuada a entrada do aluno na sala");
+            System.out.println("Nao foi efetuada a entrada do aluno na sala\n");
+
+    }
+
+    public void saidaAlunoNaSala(SalaEstudo salaEstudo , Aluno aluno){
+        if(salaEstudo == null || aluno == null) return;
+
+        if(salaEstudo.remAlunoSala(aluno) == true)
+            System.out.println("Foi efetuada o registo de saida do aluno da sala!\n");
+        else
+            System.out.println("Nao foi possivel efetuar o registo de saida do aluno!\n");
 
     }
 
