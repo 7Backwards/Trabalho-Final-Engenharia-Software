@@ -1,9 +1,12 @@
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Disciplina {
+    private static final AtomicInteger count = new AtomicInteger(0);
     private int nDisciplina;
     private String nome;
 
-    public Disciplina(int nDisciplina, String nome) {
-        this.nDisciplina = nDisciplina;
+    public Disciplina( String nome) {
+        this.nDisciplina = count.incrementAndGet();
         this.nome = nome;
     }
 

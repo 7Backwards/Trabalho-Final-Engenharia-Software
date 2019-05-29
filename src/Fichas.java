@@ -1,10 +1,13 @@
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Fichas {
+    private static final AtomicInteger count = new AtomicInteger(0);
     private int nFicha;
     private String titulo;
     private Disciplina disciplina;
 
     public Fichas(int nFicha, String titulo, Disciplina disciplina) {
-        this.nFicha = nFicha;
+        this.nFicha = count.incrementAndGet();
         this.titulo = titulo;
         this.disciplina = disciplina;
     }

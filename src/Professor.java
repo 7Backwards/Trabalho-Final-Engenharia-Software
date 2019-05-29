@@ -1,8 +1,8 @@
 public class Professor extends Docente {
     private Disciplina disciplina;
 
-    public Professor(int nDocente, String nome, Disciplina disciplina) {
-        super(nDocente, nome);
+    public Professor( String nome, Disciplina disciplina) {
+        super(nome);
         this.disciplina = disciplina;
     }
 

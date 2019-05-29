@@ -27,7 +27,9 @@ public class RepositorioMem implements Repositorio {
 
     //-----------
 
+    //2ºSprint
 
+    ArrayList<Fichas> FichasL = new ArrayList<>();
 
     public RepositorioMem() {
     }
@@ -131,4 +133,12 @@ public class RepositorioMem implements Repositorio {
     }
 
 
+    //2ºSprint
+
+    public void EntregarFichaAAluno(Fichas ficha, Aluno aluno) {
+
+        aluno.AddFicha(ficha);
+    }
+
 }
+

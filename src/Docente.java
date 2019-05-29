@@ -1,9 +1,12 @@
+import java.util.concurrent.atomic.AtomicInteger;
+
 public abstract class Docente {
+    private static final AtomicInteger count = new AtomicInteger(0);
     private int nDocente;
     private String nome;
 
-    public Docente(int nDocente, String nome) {
-        this.nDocente = nDocente;
+    public Docente(String nome) {
+        this.nDocente = count.incrementAndGet();
         this.nome = nome;
     }
 

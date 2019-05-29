@@ -49,10 +49,7 @@ public interface Repositorio{
 
     public void entradaAlunoNaSala(SalaEstudo salaEstudo, Aluno aluno);
 
-
-
-
-
-
+    //Aluno recebe Fichas de Trabalho
+    public void EntregarFichaAAluno(Fichas ficha, Aluno aluno);
 
 }
