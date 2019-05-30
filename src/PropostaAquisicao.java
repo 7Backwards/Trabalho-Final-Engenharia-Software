@@ -2,12 +2,12 @@ import java.time.LocalDate;
 
 public class PropostaAquisicao {
     private LocalDate data;
-    private Funcionario funcionario;
+    private Utilizador Utilizador;
     private String infoLivro;
 
-    public PropostaAquisicao(LocalDate data, Funcionario funcionario, String infoLivro) {
+    public PropostaAquisicao(LocalDate data, Utilizador Utilizador, String infoLivro) {
         this.data = data;
-        this.funcionario = funcionario;
+        this.Utilizador = Utilizador;
         this.infoLivro = infoLivro;
     }
 
@@ -15,8 +15,8 @@ public class PropostaAquisicao {
         return data;
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
+    public Utilizador getUtilizador() {
+        return Utilizador;
     }
 
     public String getInfoLivro() {

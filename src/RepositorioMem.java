@@ -13,15 +13,14 @@ public class RepositorioMem implements Repositorio {
     ArrayList<PropostaAquisicao> propAquisicaoL = new ArrayList<>();
     ArrayList<Requisicao> requisicaoL = new ArrayList<>();
     ArrayList<RequisicaoCompra> requisicaoCompraL = new ArrayList<>();
-    ArrayList<Funcionario> FuncionarioL = new ArrayList<>();
+    ArrayList<Utilizador> UtilizadorL = new ArrayList<>();
+    ArrayList<TipoUtilizador> TipoUtilizadorL = new ArrayList<>();
 
     //1ºSprint
 
     ArrayList<SalaEstudo> salaEstudoL = new ArrayList<>();
     ArrayList<Aluno> alunoL = new ArrayList<>();
-    ArrayList<Docente> docenteL = new ArrayList<>();
     ArrayList<Professor> professorL = new ArrayList<>();
-    ArrayList<Funcionario> funcionarioL = new ArrayList<>();
     ArrayList<Horario> horarioL = new ArrayList<>();
     ArrayList<Disciplina> disciplinaL = new ArrayList<>();
 
@@ -100,16 +99,12 @@ public class RepositorioMem implements Repositorio {
         alunoL.add(aluno);
     }
 
-    public void adicionaDocente(Docente docente){
-        docenteL.add(docente);
-    }
-
     public void adicionaProfessor(Professor professor) {
         professorL.add(professor);
     }
 
-    public void adicionaFuncionario(Funcionario funcionario) {
-        funcionarioL.add(funcionario);
+    public void adicionaUtilizador(Utilizador utilizador) {
+        UtilizadorL.add(utilizador);
     }
 
     public void adicionaHorarios(Horario horario) {

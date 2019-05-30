@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class SalaEstudo {
     private int nSala;
     private int nLugares;
+    private int nLugaresDisponiveis;
     private Professor prof;
     private ArrayList<Aluno> AlunosList;
     private Horario HDSala;
@@ -13,6 +14,7 @@ public class SalaEstudo {
         this.prof = prof;
         AlunosList = alunosList;
         this.HDSala = HDSala;
+        this.nLugaresDisponiveis=this.nLugares; //Visto que a sala acabou de ser criada
     }
 
     public int getnSala() {
@@ -77,6 +79,12 @@ public class SalaEstudo {
             System.out.println("Aluno nao esta presente nesta sala");
             return false;
         }
+    }
+
+    public void FecharSala(Aluno aluno) {
+        AlunosList.removeAll(AlunosList); //Todos os alunos saiem da sala
+        prof = null; //o professor sai da sala
+        nLugaresDisponiveis=this.nLugares; //Visto que todos os alunos saiem da sala
     }
 
 }

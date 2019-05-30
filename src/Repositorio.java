@@ -33,11 +33,9 @@ public interface Repositorio{
 
     public void adicionaAluno(Aluno aluno);
 
-    public void adicionaDocente(Docente docente);
-
     public void adicionaProfessor(Professor professor);
 
-    public void adicionaFuncionario(Funcionario funcionario);
+    public void adicionaUtilizador(Utilizador utilizador);
 
     public void adicionaHorarios(Horario horario);
 

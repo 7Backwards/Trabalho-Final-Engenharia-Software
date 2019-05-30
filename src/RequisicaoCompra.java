@@ -5,14 +5,14 @@ public abstract class RequisicaoCompra {
     private LocalDate data;
     private String oficio;
     private Livro livro;
-    private Funcionario funcionario;
+    private Utilizador Utilizador;
 
-    public RequisicaoCompra(String estado, LocalDate data, String oficio, Livro livro, Funcionario funcionario) {
+    public RequisicaoCompra(String estado, LocalDate data, String oficio, Livro livro, Utilizador Utilizador) {
         this.estado = estado;
         this.data = data;
         this.oficio = oficio;
         this.livro = livro;
-        this.funcionario = funcionario;
+        this.Utilizador = Utilizador;
     }
 
     public String getEstado() {
@@ -31,7 +31,7 @@ public abstract class RequisicaoCompra {
         return livro;
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
+    public Utilizador getUtilizador() {
+        return Utilizador;
     }
 }

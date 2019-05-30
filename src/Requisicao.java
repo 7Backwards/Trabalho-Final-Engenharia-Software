@@ -3,12 +3,12 @@ import java.time.LocalDate;
 public class Requisicao {
 
     private LocalDate data;
-    private Funcionario funcionario;
+    private Utilizador Utilizador;
     private Copia copia;
 
-    public Requisicao(LocalDate data, Funcionario funcionario, Copia copia) {
+    public Requisicao(LocalDate data, Utilizador Utilizador, Copia copia) {
         this.data = data;
-        this.funcionario = funcionario;
+        this.Utilizador = Utilizador;
         this.copia = copia;
     }
 
@@ -16,8 +16,8 @@ public class Requisicao {
         return data;
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
+    public Utilizador getUtilizador() {
+        return Utilizador;
     }
 
     public Copia getCopia() {
