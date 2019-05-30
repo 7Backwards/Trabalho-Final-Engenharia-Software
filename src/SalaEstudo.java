@@ -66,4 +66,17 @@ public class SalaEstudo {
 
     }
 
+    public boolean remAlunoSala(Aluno aluno) {
+
+        if(this.AlunosList.contains(aluno)){
+            this.AlunosList.remove(aluno);
+            this.nLugares--;
+            return true;
+        }
+        else {
+            System.out.println("Aluno nao esta presente nesta sala");
+            return false;
+        }
+    }
+
 }
