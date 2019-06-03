@@ -6,11 +6,13 @@ public class Aluno {
     private String nome;
     private int nAluno;
     private ArrayList<Fichas> FichasList;
+    private ArrayList<FeedbackFichas> FeedbackFichasPeloAluno;
 
     public Aluno(String nome, ArrayList<Fichas> fichasList) {
         this.nome = nome;
         this.nAluno = count.incrementAndGet();
         FichasList = fichasList;
+        this.FeedbackFichasPeloAluno = new ArrayList<FeedbackFichas>();
     }
 
     public String getNome() {
@@ -39,5 +41,13 @@ public class Aluno {
 
     public void AddFicha(Fichas ficha) {
         this.FichasList.add(ficha);
+    }
+
+    public ArrayList<FeedbackFichas> getFeedbackFichasPeloAluno() {
+        return FeedbackFichasPeloAluno;
+    }
+
+    public void AddFeedback(FeedbackFichas novoFeedback) {
+        FeedbackFichasPeloAluno.add(novoFeedback);
     }
 }

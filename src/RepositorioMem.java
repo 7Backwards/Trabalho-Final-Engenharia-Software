@@ -77,8 +77,6 @@ public class RepositorioMem implements Repositorio {
         requisicaoCompraL.add(requisicaoCompra);
     }
 
-
-
     public Emprestimo devolveEmprestimoDaRequisicao(Requisicao r) {
 
         for (Emprestimo i : emprestimoL) {
@@ -88,6 +86,14 @@ public class RepositorioMem implements Repositorio {
         return null;
     }
 
+    public void AlunoAvaliaFicha(Aluno aluno,Fichas ficha,int AvaliacaoDificuldade) {
+        FeedbackFichas novoFeedback=new FeedbackFichas(aluno,ficha,AvaliacaoDificuldade);
+        aluno.AddFeedback(novoFeedback); //Adicionar novoFeedback ao Aluno
+        ficha.AddFeedback(novoFeedback);//Adicionar novoFeedback à Ficha
+
+        ficha.UpdateDificuldade(AvaliacaoDificuldade);
+
+    }
 
     //1º Sprint
 
