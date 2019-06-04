@@ -5,11 +5,12 @@ public class Professor  {
     private Disciplina disciplina;
     private String nome;
     private int nProfessor;
+    private Horario horario;
 
-    public Professor( String nome, Disciplina disciplina) {
-        this.nProfessor = count.incrementAndGet();
-        this.nome= nome;
+    public Professor(Disciplina disciplina, String nome, int nProfessor) {
         this.disciplina = disciplina;
+        this.nome = nome;
+        this.nProfessor = nProfessor;
     }
 
     public String getNome() {
@@ -34,5 +35,13 @@ public class Professor  {
 
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
+    }
+
+    public Horario getHorario() {
+        return horario;
+    }
+
+    public void setHorario(Horario horario) {
+        this.horario = horario;
     }
 }

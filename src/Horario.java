@@ -24,4 +24,6 @@ public class Horario {
     public void setHora_Fim(LocalTime hora_Fim) {
         this.hora_Fim = hora_Fim;
     }
+
+
 }

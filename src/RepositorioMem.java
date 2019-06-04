@@ -86,14 +86,6 @@ public class RepositorioMem implements Repositorio {
         return null;
     }
 
-    public void AlunoAvaliaFicha(Aluno aluno,Fichas ficha,int AvaliacaoDificuldade) {
-        FeedbackFichas novoFeedback=new FeedbackFichas(aluno,ficha,AvaliacaoDificuldade);
-        aluno.AddFeedback(novoFeedback); //Adicionar novoFeedback ao Aluno
-        ficha.AddFeedback(novoFeedback);//Adicionar novoFeedback à Ficha
-
-        ficha.UpdateDificuldade(AvaliacaoDificuldade);
-
-    }
 
     //1º Sprint
 
@@ -150,6 +142,29 @@ public class RepositorioMem implements Repositorio {
 
         aluno.AddFicha(ficha);
     }
+
+    public void AlunoAvaliaFicha(Aluno aluno,Fichas ficha,int AvaliacaoDificuldade) {
+        FeedbackFichas novoFeedback=new FeedbackFichas(aluno,ficha,AvaliacaoDificuldade);
+        aluno.AddFeedback(novoFeedback); //Adicionar novoFeedback ao Aluno
+        ficha.AddFeedback(novoFeedback);//Adicionar novoFeedback à Ficha
+
+        ficha.UpdateDificuldade(AvaliacaoDificuldade);
+
+    }
+
+    //3ºSprint
+
+    public void publicarHorarios(Funcionario funcionario,SalaEstudo salaEstudo) {
+
+        Horario teste;
+        teste = funcionario.setHorarios(professorL);
+
+        salaEstudo.setHDSala(teste);
+
+        System.out.println("Hora Inicio:" + teste.getHora_Inicio() + "da sala de estudo :" + salaEstudo.getnSala());
+        System.out.println("Hora Fim:" + teste.getHora_Fim()+ "da sala de estudo :" + salaEstudo.getnSala());
+    }
+
 
 }
 
