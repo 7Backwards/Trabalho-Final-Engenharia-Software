@@ -7,9 +7,9 @@ public class Funcionario {
     private String nome;
     private int nFuncionario;
 
-    public Funcionario(String nome, int nFuncionario) {
+    public Funcionario(String nome) {
         this.nome = nome;
-        this.nFuncionario = nFuncionario;
+        this.nFuncionario = count.incrementAndGet();
     }
 
     public String getNome() {
@@ -22,10 +22,6 @@ public class Funcionario {
 
     public int getnFuncionario() {
         return nFuncionario;
-    }
-
-    public void setnFuncionario(int nFuncionario) {
-        this.nFuncionario = nFuncionario;
     }
 
     public Horario setHorarios(ArrayList<Professor> professorL){

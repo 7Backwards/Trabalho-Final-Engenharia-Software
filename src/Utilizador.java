@@ -8,24 +8,18 @@ public class Utilizador {
     private TipoUtilizador tipoUtilizador;
     private String estado;
 
-    private ArrayList<Fichas> FichasList;
-    private ArrayList<FeedbackFichas> FeedbackFichasPeloAluno;
+    private ArrayList<Fichas> FichasList = new ArrayList<Fichas>();
+    private ArrayList<FeedbackFichas> FeedbackFichasPeloAluno = new ArrayList<FeedbackFichas>();
 
-    public Utilizador(int nUtilizador, String nome, TipoUtilizador tipoUtilizador, String estado, ArrayList<Fichas> fichasList, ArrayList<FeedbackFichas> feedbackFichasPeloAluno) {
-        this.nUtilizador = nUtilizador;
+    public Utilizador(String nome, TipoUtilizador tipoUtilizador, String estado) {
+        this.nUtilizador = count.incrementAndGet();
         this.nome = nome;
         this.tipoUtilizador = tipoUtilizador;
         this.estado = estado;
-        FichasList = fichasList;
-        FeedbackFichasPeloAluno = feedbackFichasPeloAluno;
     }
 
     public int getnUtilizador() {
         return nUtilizador;
-    }
-
-    public void setnUtilizador(int nUtilizador) {
-        this.nUtilizador = nUtilizador;
     }
 
     public String getNome() {

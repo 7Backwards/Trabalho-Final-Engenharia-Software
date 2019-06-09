@@ -6,9 +6,9 @@ public class SalaEstudo {
     private int nLugaresDisponiveis;
     private Professor prof;
     private ArrayList<Utilizador> AlunosList;
-    private Horario HDSala;
+    private Horario HDSala = new Horario(null,null) ;
 
-    public SalaEstudo(int nSala, int nLugares, Professor prof, ArrayList<Utilizador> alunosList, Horario HDSala) {
+    public SalaEstudo(int nSala, int nLugares, Professor prof, ArrayList<Utilizador> alunosList) {
         this.nSala = nSala;
         this.nLugares = nLugares;
         this.prof = prof;
@@ -59,6 +59,13 @@ public class SalaEstudo {
 
     public boolean addAlunoSala(Utilizador aluno){
 
+        for(Utilizador u : AlunosList){
+            if(u.equals(aluno)){
+                System.out.println("Este aluno ja foi registado na sala");
+                return false;
+            }
+        }
+
         if(this.nLugares >=1) {
             this.AlunosList.add(aluno);
             this.nLugares--;
@@ -81,10 +88,14 @@ public class SalaEstudo {
         }
     }
 
-    public void FecharSala(Utilizador aluno) {
+    public boolean FecharSala(SalaEstudo salaEstudo) {
+
+        if (salaEstudo == null) return false;
+
         AlunosList.removeAll(AlunosList); //Todos os alunos saiem da sala
         prof = null; //o professor sai da sala
         nLugaresDisponiveis=this.nLugares; //Visto que todos os alunos saiem da sala
+        return true;
     }
 
 }

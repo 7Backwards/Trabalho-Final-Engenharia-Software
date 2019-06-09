@@ -135,6 +135,15 @@ public class RepositorioMem implements Repositorio {
 
     }
 
+    public void FecharSalaDeAula(SalaEstudo salaEstudo){
+        if(salaEstudo == null) return;
+
+        if(salaEstudo.FecharSala(salaEstudo)){
+            System.out.println("Sala de estudo foi fechada");
+        }
+
+    }
+
 
     //2ºSprint
 

@@ -5,13 +5,14 @@ public class Professor  {
     private Disciplina disciplina;
     private String nome;
     private int nProfessor;
-    private Horario horario= new Horario(null,null);
+    private Horario horario = new Horario(null,null);
 
 
-    public Professor(Disciplina disciplina, String nome, int nProfessor) {
+
+    public Professor(Disciplina disciplina , String nome) {
         this.disciplina = disciplina;
         this.nome = nome;
-        this.nProfessor = nProfessor;
+        this.nProfessor = count.incrementAndGet();
     }
 
     public String getNome() {
@@ -24,10 +25,6 @@ public class Professor  {
 
     public int getnProfessor() {
         return nProfessor;
-    }
-
-    public void setnProfessor(int nProfessor) {
-        this.nProfessor = nProfessor;
     }
 
     public Disciplina getDisciplina() {

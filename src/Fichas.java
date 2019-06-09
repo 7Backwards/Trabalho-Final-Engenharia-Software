@@ -10,7 +10,7 @@ public class Fichas {
     private int DificuldadeAtual;
     private int DificuldadePeloStor; //Nivel de dificuldade dado à ficha pelo docente que a criou
 
-    public Fichas(int nFicha, String titulo, Disciplina disciplina,int dificuldade) {
+    public Fichas( String titulo, Disciplina disciplina,int dificuldade) {
         this.nFicha = count.incrementAndGet();
         this.titulo = titulo;
         this.disciplina = disciplina;
