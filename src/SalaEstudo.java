@@ -5,10 +5,10 @@ public class SalaEstudo {
     private int nLugares;
     private int nLugaresDisponiveis;
     private Professor prof;
-    private ArrayList<Aluno> AlunosList;
+    private ArrayList<Utilizador> AlunosList;
     private Horario HDSala;
 
-    public SalaEstudo(int nSala, int nLugares, Professor prof, ArrayList<Aluno> alunosList, Horario HDSala) {
+    public SalaEstudo(int nSala, int nLugares, Professor prof, ArrayList<Utilizador> alunosList, Horario HDSala) {
         this.nSala = nSala;
         this.nLugares = nLugares;
         this.prof = prof;
@@ -41,11 +41,11 @@ public class SalaEstudo {
         this.prof = prof;
     }
 
-    public ArrayList<Aluno> getAlunosList() {
+    public ArrayList<Utilizador> getAlunosList() {
         return AlunosList;
     }
 
-    public void setAlunosList(ArrayList<Aluno> alunosList) {
+    public void setAlunosList(ArrayList<Utilizador> alunosList) {
         AlunosList = alunosList;
     }
 
@@ -57,7 +57,7 @@ public class SalaEstudo {
         this.HDSala = HDSala;
     }
 
-    public boolean addAlunoSala(Aluno aluno){
+    public boolean addAlunoSala(Utilizador aluno){
 
         if(this.nLugares >=1) {
             this.AlunosList.add(aluno);
@@ -68,7 +68,7 @@ public class SalaEstudo {
 
     }
 
-    public boolean remAlunoSala(Aluno aluno) {
+    public boolean remAlunoSala(Utilizador aluno) {
 
         if(this.AlunosList.contains(aluno)){
             this.AlunosList.remove(aluno);
@@ -76,12 +76,12 @@ public class SalaEstudo {
             return true;
         }
         else {
-            System.out.println("Aluno nao esta presente nesta sala");
+            System.out.println("Este aluno nao esta presente nesta sala");
             return false;
         }
     }
 
-    public void FecharSala(Aluno aluno) {
+    public void FecharSala(Utilizador aluno) {
         AlunosList.removeAll(AlunosList); //Todos os alunos saiem da sala
         prof = null; //o professor sai da sala
         nLugaresDisponiveis=this.nLugares; //Visto que todos os alunos saiem da sala

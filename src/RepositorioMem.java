@@ -19,7 +19,7 @@ public class RepositorioMem implements Repositorio {
     //1ºSprint
 
     ArrayList<SalaEstudo> salaEstudoL = new ArrayList<>();
-    ArrayList<Aluno> alunoL = new ArrayList<>();
+    //ArrayList<Aluno> alunoL = new ArrayList<>();
     ArrayList<Professor> professorL = new ArrayList<>();
     ArrayList<Horario> horarioL = new ArrayList<>();
     ArrayList<Disciplina> disciplinaL = new ArrayList<>();
@@ -93,8 +93,8 @@ public class RepositorioMem implements Repositorio {
         salaEstudoL.add(salaEstudo);
     }
 
-    public void adicionaAluno(Aluno aluno) {
-        alunoL.add(aluno);
+    public void adicionaAluno(Utilizador aluno) {
+        UtilizadorL.add(aluno);
     }
 
     public void adicionaProfessor(Professor professor) {
@@ -114,7 +114,7 @@ public class RepositorioMem implements Repositorio {
     }
 
 
-    public void entradaAlunoNaSala(SalaEstudo salaEstudo, Aluno aluno){
+    public void entradaAlunoNaSala(SalaEstudo salaEstudo, Utilizador aluno){
 
         if(salaEstudo == null || aluno == null) return;
 
@@ -125,7 +125,7 @@ public class RepositorioMem implements Repositorio {
 
     }
 
-    public void saidaAlunoNaSala(SalaEstudo salaEstudo , Aluno aluno){
+    public void saidaAlunoNaSala(SalaEstudo salaEstudo , Utilizador aluno){
         if(salaEstudo == null || aluno == null) return;
 
         if(salaEstudo.remAlunoSala(aluno) == true)
@@ -138,12 +138,12 @@ public class RepositorioMem implements Repositorio {
 
     //2ºSprint
 
-    public void EntregarFichaAAluno(Fichas ficha, Aluno aluno) {
+    public void EntregarFichaAAluno(Fichas ficha, Utilizador aluno) {
 
         aluno.AddFicha(ficha);
     }
 
-    public void AlunoAvaliaFicha(Aluno aluno,Fichas ficha,int AvaliacaoDificuldade) {
+    public void AlunoAvaliaFicha(Utilizador aluno,Fichas ficha,int AvaliacaoDificuldade) {
         FeedbackFichas novoFeedback=new FeedbackFichas(aluno,ficha,AvaliacaoDificuldade);
         aluno.AddFeedback(novoFeedback); //Adicionar novoFeedback ao Aluno
         ficha.AddFeedback(novoFeedback);//Adicionar novoFeedback à Ficha
@@ -156,13 +156,18 @@ public class RepositorioMem implements Repositorio {
 
     public void publicarHorarios(Funcionario funcionario,SalaEstudo salaEstudo) {
 
-        Horario teste;
+        Horario teste = null;
         teste = funcionario.setHorarios(professorL);
+
+        if(teste == null){
+            System.out.println("\nnani da fk");
+            return ;
+        }
 
         salaEstudo.setHDSala(teste);
 
-        System.out.println("Hora Inicio:" + teste.getHora_Inicio() + "da sala de estudo :" + salaEstudo.getnSala());
-        System.out.println("Hora Fim:" + teste.getHora_Fim()+ "da sala de estudo :" + salaEstudo.getnSala());
+        System.out.println("Hora Inicio: " + teste.getHora_Inicio() + " da sala de estudo : " + salaEstudo.getnSala());
+        System.out.println("Hora Fim: " + teste.getHora_Fim()+ " da sala de estudo : " + salaEstudo.getnSala());
     }
 
 

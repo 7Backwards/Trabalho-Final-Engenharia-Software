@@ -30,20 +30,24 @@ public class Funcionario {
 
     public Horario setHorarios(ArrayList<Professor> professorL){
 
+        //verifica se existem professores
         if(professorL.isEmpty()){
             return null;
         }
 
-        Horario horario = null;
+        Horario horario = new Horario(null,null);
 
         LocalTime tempoinicio = LocalTime.of(8,00,00);
         LocalTime tempofim =null;
 
         horario.setHora_Inicio(tempoinicio);
 
+        //percorre a lista de professores e dalhes uma carga de 2 horas de trabalho
         for (Professor p : professorL){
-            if(p.getHorario() == null) {        //Caso que nenhum professor tenha horarios defenidos , vamos defenir 2 horas de horario para cada um
+           // System.out.println("Professor :" + p.getNome());
+            if(p.getHorario().getHora_Inicio() == null) {        //Caso que nenhum professor tenha horarios defenidos , vamos defenir 2 horas de horario para cada um
                 p.getHorario().setHora_Inicio(tempoinicio);
+                System.out.println("Hora entrada Professor : " + p.getNome() + " as :" + p.getHorario().getHora_Inicio());
                 tempofim = tempoinicio.plusHours(2);
                 p.getHorario().setHora_Fim(tempofim);
                 tempoinicio = tempofim;
@@ -55,8 +59,10 @@ public class Funcionario {
                     tempoinicio=p.getHorario().getHora_Fim().plusHours(1);
                     horario.setHora_Inicio(tempoinicio);
                 }
+
                 tempoinicio=p.getHorario().getHora_Fim().plusHours(1);
                 p.getHorario().setHora_Inicio(tempoinicio);
+                System.out.println("Hora entrada Professor : " + p.getNome() + " as :" + p.getHorario().getHora_Inicio());
                 tempofim = tempoinicio.plusHours(2);
                 p.getHorario().setHora_Fim(tempofim);
             }

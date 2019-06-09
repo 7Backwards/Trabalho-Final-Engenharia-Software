@@ -5,7 +5,8 @@ public class Professor  {
     private Disciplina disciplina;
     private String nome;
     private int nProfessor;
-    private Horario horario;
+    private Horario horario= new Horario(null,null);
+
 
     public Professor(Disciplina disciplina, String nome, int nProfessor) {
         this.disciplina = disciplina;

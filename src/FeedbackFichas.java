@@ -1,19 +1,19 @@
 public class FeedbackFichas {
-    private Aluno aluno;
+    private Utilizador aluno;
     private int Avaliacao;
     private Fichas ficha;
 
-    public FeedbackFichas(Aluno aluno, Fichas ficha, int avaliacao) {
+    public FeedbackFichas(Utilizador aluno, Fichas ficha, int avaliacao) {
         this.aluno = aluno;
         this.ficha = ficha;
         Avaliacao = avaliacao;
     }
 
-    public Aluno getAluno() {
+    public Utilizador getAluno() {
         return aluno;
     }
 
-    public void setAluno(Aluno aluno) {
+    public void setAluno(Utilizador aluno) {
         this.aluno = aluno;
     }
 

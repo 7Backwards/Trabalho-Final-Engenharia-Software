@@ -31,7 +31,7 @@ public interface Repositorio{
 
     public void adicionaSalaEstudo(SalaEstudo salaEstudo);
 
-    public void adicionaAluno(Aluno aluno);
+    //public void adicionaAluno(Aluno aluno);
 
     public void adicionaProfessor(Professor professor);
 
@@ -45,9 +45,9 @@ public interface Repositorio{
 
     //Aluno a frequentar sala de estudo
 
-    public void entradaAlunoNaSala(SalaEstudo salaEstudo, Aluno aluno);
+    public void entradaAlunoNaSala(SalaEstudo salaEstudo, Utilizador aluno);
 
     //Aluno recebe Fichas de Trabalho
-    public void EntregarFichaAAluno(Fichas ficha, Aluno aluno);
+    public void EntregarFichaAAluno(Fichas ficha, Utilizador aluno);
 
 }

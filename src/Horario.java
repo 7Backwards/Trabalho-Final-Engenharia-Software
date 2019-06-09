@@ -4,6 +4,7 @@ public class Horario {
     private LocalTime hora_Inicio;
     private LocalTime hora_Fim;
 
+
     public Horario(LocalTime hora_Inicio, LocalTime hora_Fim) {
         this.hora_Inicio = hora_Inicio;
         this.hora_Fim = hora_Fim;
