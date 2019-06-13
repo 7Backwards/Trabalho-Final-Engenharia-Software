@@ -67,7 +67,7 @@ public class Fichas {
         }
 
         this.DificuldadeAtual=(int) (1/3)*SomaFeedbackAlunos+(2/3)*DificuldadePeloStor; //Definimos que a avaliação da dificuldade do stor tem um peso de 2/3
-                                                                                        //enquanto que a dos alunos tem 1/
+                                                                                        //enquanto que a dos alunos tem 1/3
     }
 
     public float MediaFeedbackFicha() {

@@ -1,3 +1,4 @@
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class RepositorioMem implements Repositorio {
@@ -161,24 +162,15 @@ public class RepositorioMem implements Repositorio {
 
     }
 
-    //3ºSprint
+    //4ºSprint
 
-    public void publicarHorarios(Funcionario funcionario,SalaEstudo salaEstudo) {
+    public void CriarHorarioProfessor(Funcionario funcionario, Professor professor, LocalTime Inicio, LocalTime fim,LocalTime inicioAlmoço,LocalTime fimAlmoço) {
+        funcionario.CriarHorarioProfessor(professor,Inicio,fim,inicioAlmoço,fimAlmoço);
 
-        Horario teste = null;
-        teste = funcionario.setHorarios(professorL);
-
-        if(teste == null){
-            System.out.println("\nnani da fk");
-            return ;
-        }
-
-        salaEstudo.setHDSala(teste);
-
-        System.out.println("Hora Inicio: " + teste.getHora_Inicio() + " da sala de estudo : " + salaEstudo.getnSala());
-        System.out.println("Hora Fim: " + teste.getHora_Fim()+ " da sala de estudo : " + salaEstudo.getnSala());
     }
 
 
+
 }
+
 

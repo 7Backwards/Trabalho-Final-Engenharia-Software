@@ -1,3 +1,4 @@
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class SalaEstudo {
@@ -6,14 +7,14 @@ public class SalaEstudo {
     private int nLugaresDisponiveis;
     private Professor prof;
     private ArrayList<Utilizador> AlunosList;
-    private Horario HDSala = new Horario(null,null) ;
+    private Horario HorarioSalaEstudo;
 
     public SalaEstudo(int nSala, int nLugares, Professor prof, ArrayList<Utilizador> alunosList) {
         this.nSala = nSala;
         this.nLugares = nLugares;
         this.prof = prof;
         AlunosList = alunosList;
-        this.HDSala = HDSala;
+        this.HorarioSalaEstudo = HorarioSalaEstudo;
         this.nLugaresDisponiveis=this.nLugares; //Visto que a sala acabou de ser criada
     }
 
@@ -49,12 +50,20 @@ public class SalaEstudo {
         AlunosList = alunosList;
     }
 
-    public Horario getHDSala() {
-        return HDSala;
+    public int getnLugaresDisponiveis() {
+        return nLugaresDisponiveis;
     }
 
-    public void setHDSala(Horario HDSala) {
-        this.HDSala = HDSala;
+    public void setnLugaresDisponiveis(int nLugaresDisponiveis) {
+        this.nLugaresDisponiveis = nLugaresDisponiveis;
+    }
+
+    public Horario getHorarioSalaEstudo() {
+        return HorarioSalaEstudo;
+    }
+
+    public void setHorarioSalaEstudo(Horario horarioSalaEstudo) {
+        HorarioSalaEstudo = horarioSalaEstudo;
     }
 
     public boolean addAlunoSala(Utilizador aluno){
@@ -98,4 +107,15 @@ public class SalaEstudo {
         return true;
     }
 
+    public boolean SalaEstudoDentroDoHorario() { //Verifica se a sala de estudo está aberta
+        if(LocalTime.now().compareTo(this.HorarioSalaEstudo.getHora_Inicio()) >=0 &&  LocalTime.now().compareTo(this.HorarioSalaEstudo.getHora_Fim()) <= 0 ) {
+            return true;
+        }
+        else
+            return false;
+    }
 }
+
+
+
+

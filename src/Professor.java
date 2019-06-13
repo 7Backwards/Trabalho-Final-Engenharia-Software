@@ -1,3 +1,4 @@
+import java.time.LocalTime;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Professor  {
@@ -5,7 +6,7 @@ public class Professor  {
     private Disciplina disciplina;
     private String nome;
     private int nProfessor;
-    private Horario horario = new Horario(null,null);
+    private Horario horario;
 
 
 
@@ -42,4 +43,15 @@ public class Professor  {
     public void setHorario(Horario horario) {
         this.horario = horario;
     }
+
+    public boolean ProfessorDentroDoHorario() { //Verifica se o Professor está dentro do seu horario (caso esteja na hora de almoço dá return falso)
+        if(LocalTime.now().compareTo(this.horario.getHora_Inicio()) >=0 &&  LocalTime.now().compareTo(this.horario.getHora_Fim()) <= 0 && !(LocalTime.now().compareTo(this.horario.getHora_inicio_almoço()) >=0 &&  LocalTime.now().compareTo(this.horario.getHora_fim_almoço()) <=0)) {
+            return true;
+        }
+        else
+            return false;
+    }
 }
+
+
+
