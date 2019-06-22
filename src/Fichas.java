@@ -62,12 +62,16 @@ public class Fichas {
     public void UpdateDificuldade(int AvaliacaoDificuldade) {
         int i;
         int SomaFeedbackAlunos=0;
+        float FeedbackAlunos;
+        float Total;
         for (i=0;i<FeedbackFicha.size();i++) {
             SomaFeedbackAlunos+=FeedbackFicha.get(i).getAvaliacao();
         }
+        FeedbackAlunos=SomaFeedbackAlunos/FeedbackFicha.size(); //Média da soma das avaliações dos alunos
 
-        this.DificuldadeAtual=(int) (1/3)*SomaFeedbackAlunos+(2/3)*DificuldadePeloStor; //Definimos que a avaliação da dificuldade do stor tem um peso de 2/3
+        Total= (FeedbackAlunos / 3) + (2 * DificuldadePeloStor / 3); //Definimos que a avaliação da dificuldade do stor tem um peso de 2/3
                                                                                         //enquanto que a dos alunos tem 1/3
+        this.DificuldadeAtual=Math.round(Total);
     }
 
     public float MediaFeedbackFicha() {
