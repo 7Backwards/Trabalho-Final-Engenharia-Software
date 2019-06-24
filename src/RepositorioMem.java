@@ -119,10 +119,15 @@ public class RepositorioMem implements Repositorio {
 
         if(salaEstudo == null || aluno == null) return;
 
-        if(salaEstudo.addAlunoSala(aluno) == true)
-            System.out.println("Foi efetuada uma nova entrada de aluno na sala!\n");
-        else
-            System.out.println("Nao foi efetuada a entrada do aluno na sala\n");
+        if(salaEstudo.SalaEstudoDentroDoHorario()) {
+
+            if (salaEstudo.addAlunoSala(aluno) == true)
+                System.out.println("Foi efetuada uma nova entrada de aluno na sala!\n");
+            else
+                System.out.println("Nao foi efetuada a entrada do aluno na sala\n");
+        }else{
+            System.out.println("Sala de estudo encontra-se fechada");
+        }
 
     }
 

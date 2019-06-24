@@ -86,7 +86,7 @@ public class Main {
 
         System.out.println("Dificuldade da ficha depois de avaliada pelos alunos: " + ficha.getDificuldade());
 
-        System.out.println(salaEstudo.getAlunosList().size());
+        System.out.println("Numero de alunos na sala: " + salaEstudo.getAlunosList().size());
 
 
     }
