@@ -3,33 +3,31 @@ import java.util.ArrayList;
 
 public class RepositorioMem implements Repositorio {
 
-    ArrayList<Coima> coimaL = new ArrayList<>();
-    ArrayList<Copia> copiaL = new ArrayList<>();
-    ArrayList<Devolucao> devolucaoL = new ArrayList<>();
-    ArrayList<Emprestimo> emprestimoL = new ArrayList<>();
-    ArrayList<Encomenda> encomendaL = new ArrayList<>();
-    ArrayList<EntradaNovoLivro> enNovoLivroL = new ArrayList<>();
-    ArrayList<Livro> livroL = new ArrayList<>();
-    ArrayList<Notificacao> notificacaoL = new ArrayList<>();
-    ArrayList<PropostaAquisicao> propAquisicaoL = new ArrayList<>();
-    ArrayList<Requisicao> requisicaoL = new ArrayList<>();
-    ArrayList<RequisicaoCompra> requisicaoCompraL = new ArrayList<>();
-    ArrayList<Utilizador> UtilizadorL = new ArrayList<>();
-    ArrayList<TipoUtilizador> TipoUtilizadorL = new ArrayList<>();
+    private ArrayList<Coima> coimaL = new ArrayList<>();
+    private ArrayList<Copia> copiaL = new ArrayList<>();
+    private ArrayList<Devolucao> devolucaoL = new ArrayList<>();
+    private ArrayList<Emprestimo> emprestimoL = new ArrayList<>();
+    private ArrayList<Encomenda> encomendaL = new ArrayList<>();
+    private ArrayList<EntradaNovoLivro> enNovoLivroL = new ArrayList<>();
+    private ArrayList<Livro> livroL = new ArrayList<>();
+    private ArrayList<Notificacao> notificacaoL = new ArrayList<>();
+    private ArrayList<PropostaAquisicao> propAquisicaoL = new ArrayList<>();
+    private ArrayList<Requisicao> requisicaoL = new ArrayList<>();
+    private ArrayList<RequisicaoCompra> requisicaoCompraL = new ArrayList<>();
+    private ArrayList<Utilizador> UtilizadorL = new ArrayList<>();
+    private ArrayList<TipoUtilizador> TipoUtilizadorL = new ArrayList<>();
 
     //1ºSprint
 
-    ArrayList<SalaEstudo> salaEstudoL = new ArrayList<>();
-    //ArrayList<Aluno> alunoL = new ArrayList<>();
-    ArrayList<Professor> professorL = new ArrayList<>();
-    ArrayList<Horario> horarioL = new ArrayList<>();
-    ArrayList<Disciplina> disciplinaL = new ArrayList<>();
+    private ArrayList<SalaEstudo> salaEstudoL = new ArrayList<>();
+    private ArrayList<Professor> professorL = new ArrayList<>();
+    private ArrayList<Disciplina> disciplinaL = new ArrayList<>();
 
     //-----------
 
     //2ºSprint
 
-    ArrayList<Fichas> FichasL = new ArrayList<>();
+    private ArrayList<Fichas> FichasL = new ArrayList<>();
 
     public RepositorioMem() {
     }
@@ -106,14 +104,9 @@ public class RepositorioMem implements Repositorio {
         UtilizadorL.add(utilizador);
     }
 
-    public void adicionaHorarios(Horario horario) {
-        horarioL.add(horario);
-    }
-
     public void adicionaDisciplina(Disciplina disciplina) {
         disciplinaL.add(disciplina);
     }
-
 
     public void entradaAlunoNaSala(SalaEstudo salaEstudo, Utilizador aluno){
 
@@ -121,7 +114,7 @@ public class RepositorioMem implements Repositorio {
 
         if(salaEstudo.SalaEstudoDentroDoHorario()) {
 
-            if (salaEstudo.addAlunoSala(aluno) == true)
+            if (salaEstudo.addAlunoSala(aluno))
                 System.out.println("Foi efetuada uma nova entrada de aluno na sala!\n");
             else
                 System.out.println("Nao foi efetuada a entrada do aluno na sala\n");
@@ -134,7 +127,7 @@ public class RepositorioMem implements Repositorio {
     public void saidaAlunoNaSala(SalaEstudo salaEstudo , Utilizador aluno){
         if(salaEstudo == null || aluno == null) return;
 
-        if(salaEstudo.remAlunoSala(aluno) == true)
+        if(salaEstudo.remAlunoSala(aluno))
             System.out.println("Foi efetuada o registo de saida do aluno da sala!\n");
         else
             System.out.println("Nao foi possivel efetuar o registo de saida do aluno!\n");
@@ -169,8 +162,13 @@ public class RepositorioMem implements Repositorio {
 
     //4ºSprint
 
-    public void CriarHorarioProfessor(Funcionario funcionario, Professor professor, LocalTime Inicio, LocalTime fim,LocalTime inicioAlmoço,LocalTime fimAlmoço) {
-        funcionario.CriarHorarioProfessor(professor,Inicio,fim,inicioAlmoço,fimAlmoço);
+    public void CriarHorarioProfessor(Funcionario funcionario, Professor professor, LocalTime Inicio, LocalTime fim,LocalTime inicioAlmoco,LocalTime fimAlmoco) {
+        funcionario.CriarHorarioProfessor(professor,Inicio,fim,inicioAlmoco,fimAlmoco);
+
+    }
+
+    public void CriarHorarioSalaEstudos(Funcionario funcionario, SalaEstudo saladestudo, LocalTime Inicio, LocalTime fim) {
+        funcionario.CriarHorarioSalaEstudos(saladestudo,Inicio,fim);
 
     }
 

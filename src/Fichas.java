@@ -16,7 +16,7 @@ public class Fichas {
         this.disciplina = disciplina;
         this.DificuldadeAtual = dificuldade;
         this.DificuldadePeloStor = dificuldade;
-        this.FeedbackFicha = new ArrayList<FeedbackFichas>();
+        this.FeedbackFicha = new ArrayList<>();
     }
 
     public int getnFicha() {
@@ -61,13 +61,13 @@ public class Fichas {
 
     public void UpdateDificuldade(int AvaliacaoDificuldade) {
         int i;
-        int SomaFeedbackAlunos=0;
+        int SomaFeedbackAlunos = 0;
         float FeedbackAlunos;
         float Total;
         for (i=0;i<FeedbackFicha.size();i++) {
-            SomaFeedbackAlunos+=FeedbackFicha.get(i).getAvaliacao();
+            SomaFeedbackAlunos +=FeedbackFicha.get(i).getAvaliacao();
         }
-        FeedbackAlunos=SomaFeedbackAlunos/FeedbackFicha.size(); //Média da soma das avaliações dos alunos
+        FeedbackAlunos= SomaFeedbackAlunos /FeedbackFicha.size(); //Média da soma das avaliações dos alunos
 
         Total= (FeedbackAlunos / 3) + (2 * DificuldadePeloStor / 3); //Definimos que a avaliação da dificuldade do stor tem um peso de 2/3
                                                                                         //enquanto que a dos alunos tem 1/3

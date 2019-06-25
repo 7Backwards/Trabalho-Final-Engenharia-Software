@@ -19,7 +19,7 @@ public class Main {
 
 
 
-        Disciplina disciplina =new Disciplina("POO");
+        Disciplina disciplina =new Disciplina("Programação Dispositivos Móveis");
         Professor prof = new Professor(disciplina,"Jose");
 
         Disciplina disciplina2 =new Disciplina("Portugues");
@@ -30,22 +30,39 @@ public class Main {
 
         rep.adicionaProfessor(prof);rep.adicionaProfessor(prof2);rep.adicionaProfessor(prof3);
 
-        SalaEstudo salaEstudo = new SalaEstudo(1,10,prof,rep.UtilizadorL);
+        SalaEstudo salaEstudo = new SalaEstudo(1,10);
 
-        SalaEstudo salaEstudo2 = new SalaEstudo(2,10,prof2,rep.UtilizadorL);
+        SalaEstudo salaEstudo2 = new SalaEstudo(2,15);
 
-        SalaEstudo salaEstudo3 = new SalaEstudo(3,10,prof3,rep.UtilizadorL);
+        SalaEstudo salaEstudo3 = new SalaEstudo(3,12);
+
+        salaEstudo.setProf(prof);
+
+        salaEstudo.setProf(prof2);
+
+        salaEstudo.removeProf();
 
 
 
-
-        //Testes do 3º sprint       Defenir horarios
+        //Testes do 3º sprint       Definir horarios
 
 
 
         Funcionario funcionario = new Funcionario("Luis",LocalTime.of(8,00,00),LocalTime.of(17,00,00),LocalTime.of(13,00,00),LocalTime.of(14,00,00));
 
+        if(funcionario.FuncionarioDentroDoHorario()) {
+            System.out.println("Funcionario dentro do Horário de trabalho");
+        }
+        else {
+            System.out.println("Funcionario fora do Horário de trabalho");
+        }
+
+        rep.CriarHorarioSalaEstudos(funcionario,salaEstudo,LocalTime.of(8,00,00),LocalTime.of(14,00,00));
+        rep.CriarHorarioSalaEstudos(funcionario,salaEstudo2,LocalTime.of(12,00,00),LocalTime.of(20,00,00));
+        rep.CriarHorarioSalaEstudos(funcionario,salaEstudo3,LocalTime.of(20,00,00),LocalTime.of(23,59,59));
+
         rep.CriarHorarioProfessor(funcionario,prof,LocalTime.of(8,00,00),LocalTime.of(15,00,00),LocalTime.of(13,00,00),LocalTime.of(14,00,00));
+        rep.CriarHorarioProfessor(funcionario,prof2,LocalTime.of(8,00,00),LocalTime.of(20,00,00),LocalTime.of(13,00,00),LocalTime.of(14,00,00));
 
         System.out.println("Horario do funcionario");
         System.out.println("Inicio: " + funcionario.getHorario().getHora_Inicio());
@@ -65,11 +82,28 @@ public class Main {
         Utilizador aluno4 = new Utilizador("Ashley",null,null);
 
         rep.entradaAlunoNaSala(salaEstudo,aluno);
-        rep.entradaAlunoNaSala(salaEstudo,aluno2);
-        rep.entradaAlunoNaSala(salaEstudo,aluno3);
-        //rep.saidaAlunoNaSala(salaEstudo,aluno3);
-        //rep.FecharSalaDeAula(salaEstudo);
 
+        System.out.println("Numero de alunos na sala: " + salaEstudo.getAlunosList().size());
+
+        rep.entradaAlunoNaSala(salaEstudo2,aluno2);
+
+        System.out.println("Numero de alunos na sala: " + salaEstudo2.getAlunosList().size());
+
+        rep.entradaAlunoNaSala(salaEstudo3,aluno3);
+
+        System.out.println("Numero de alunos na sala: " + salaEstudo3.getAlunosList().size());
+
+        rep.entradaAlunoNaSala(salaEstudo3,aluno4);
+
+        System.out.println("Numero de alunos na sala: " + salaEstudo3.getAlunosList().size());
+
+        rep.saidaAlunoNaSala(salaEstudo3,aluno3);
+        rep.saidaAlunoNaSala(salaEstudo2,aluno2);
+        rep.saidaAlunoNaSala(salaEstudo,aluno);
+
+        rep.FecharSalaDeAula(salaEstudo3);
+        rep.FecharSalaDeAula(salaEstudo2);
+        rep.FecharSalaDeAula(salaEstudo);
 
         //Testes ao 2º Sprint       Entrega e avaliaçao dinamica da ficha
         Fichas ficha = new Fichas("Geometria",disciplina3,12);
@@ -86,7 +120,20 @@ public class Main {
 
         System.out.println("Dificuldade da ficha depois de avaliada pelos alunos: " + ficha.getDificuldade());
 
-        System.out.println("Numero de alunos na sala: " + salaEstudo.getAlunosList().size());
+        if(prof.ProfessorDentroDoHorario()) {
+            System.out.println("Professor dentro do Horário de trabalho");
+        }
+        else {
+            System.out.println("Professor fora do Horário de trabalho");
+        }
+
+        if(prof2.ProfessorDentroDoHorario()) {
+            System.out.println("Professor dentro do Horário de trabalho");
+        }
+        else {
+            System.out.println("Professor fora do Horário de trabalho");
+        }
+
 
 
     }

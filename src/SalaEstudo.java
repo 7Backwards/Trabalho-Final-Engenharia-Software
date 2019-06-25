@@ -9,13 +9,11 @@ public class SalaEstudo {
     private ArrayList<Utilizador> AlunosList;
     private Horario HorarioSalaEstudo;
 
-    public SalaEstudo(int nSala, int nLugares, Professor prof, ArrayList<Utilizador> alunosList) {
+    public SalaEstudo(int nSala, int nLugares) {
         this.nSala = nSala;
         this.nLugares = nLugares;
-        this.prof = prof;
-        AlunosList = alunosList;
-        this.HorarioSalaEstudo = HorarioSalaEstudo;
         this.nLugaresDisponiveis=this.nLugares; //Visto que a sala acabou de ser criada
+        this.AlunosList = new ArrayList<>();
     }
 
     public int getnSala() {
@@ -39,8 +37,13 @@ public class SalaEstudo {
     }
 
     public void setProf(Professor prof) {
-        this.prof = prof;
+        if(this.prof != null)
+            this.prof = prof;
+        else
+            System.out.println("Já se encontra um professor nesta sala de estudo");
     }
+
+    public void removeProf() {this.prof = null;}
 
     public ArrayList<Utilizador> getAlunosList() {
         return AlunosList;
@@ -68,14 +71,17 @@ public class SalaEstudo {
 
     public boolean addAlunoSala(Utilizador aluno){
 
-        for(Utilizador u : AlunosList){
-            if(u.equals(aluno)){
-                System.out.println("Este aluno ja foi registado na sala");
-                return false;
+        if(AlunosList != null) {
+            for (Utilizador u : AlunosList) {
+                if (u.equals(aluno)) {
+                    System.out.println("Este aluno ja foi registado na sala");
+                    return false;
+                }
             }
         }
 
         if(this.nLugares >=1) {
+            assert this.AlunosList != null;
             this.AlunosList.add(aluno);
             this.nLugares--;
             return true;
