@@ -22,11 +22,6 @@ public class RepositorioMem implements Repositorio {
     private ArrayList<SalaEstudo> salaEstudoL = new ArrayList<>();
     private ArrayList<Professor> professorL = new ArrayList<>();
     private ArrayList<Disciplina> disciplinaL = new ArrayList<>();
-
-    //-----------
-
-    //2ºSprint
-
     private ArrayList<Fichas> FichasL = new ArrayList<>();
 
     public RepositorioMem() {

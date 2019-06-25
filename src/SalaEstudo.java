@@ -71,13 +71,8 @@ public class SalaEstudo {
 
     public boolean addAlunoSala(Utilizador aluno){
 
-        if(AlunosList != null) {
-            for (Utilizador u : AlunosList) {
-                if (u.equals(aluno)) {
-                    System.out.println("Este aluno ja foi registado na sala");
-                    return false;
-                }
-            }
+        if(aluno.getDentroSaladeEstudo() == 1) {
+            return false; //aluno já se encontra dentro de uma sala de estudo
         }
 
         if(this.nLugares >=1) {
