@@ -48,7 +48,8 @@ public class Main {
 
 
 
-        Funcionario funcionario = new Funcionario("Luis",LocalTime.of(8,00,00),LocalTime.of(17,00,00),LocalTime.of(13,00,00),LocalTime.of(14,00,00));
+        Funcionario funcionario = new Funcionario("Luis",LocalTime.of(0,00,00),LocalTime.of(23,59,59),LocalTime.of(13,00,00),LocalTime.of(13,00,01)); //Definimos este horário com vista ao programa funcionar a qualquer hora do dia, caso contrário somente poderiam ser executadas as funçoes de criar
+                                                                                                                                                                                                                                                // horarios professor e salas de estudo quando o funcionario estivesse dentro do seu horario.
 
         if(funcionario.FuncionarioDentroDoHorario()) {
             System.out.println("Funcionario dentro do Horário de trabalho");

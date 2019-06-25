@@ -7,6 +7,7 @@ public class Utilizador {
     private String nome;
     private TipoUtilizador tipoUtilizador;
     private String estado;
+    private int DentroSaladeEstudo;
 
     private ArrayList<Fichas> FichasList = new ArrayList<Fichas>();
     private ArrayList<FeedbackFichas> FeedbackFichasPeloAluno = new ArrayList<FeedbackFichas>();
@@ -40,6 +41,14 @@ public class Utilizador {
 
     public String getEstado() {
         return estado;
+    }
+
+    public int getDentroSaladeEstudo() {
+        return DentroSaladeEstudo;
+    }
+
+    public void setDentroSaladeEstudo(int dentroSaladeEstudo) {
+        DentroSaladeEstudo = dentroSaladeEstudo;
     }
 
     public void setEstado(String estado) {

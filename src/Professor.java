@@ -14,6 +14,7 @@ public class Professor  {
         this.disciplina = disciplina;
         this.nome = nome;
         this.nProfessor = count.incrementAndGet();
+        horario=null;
     }
 
     public String getNome() {
@@ -37,11 +38,16 @@ public class Professor  {
     }
 
     public Horario getHorario() {
+
         return horario;
     }
 
     public void setHorario(Horario horario) {
-        this.horario = horario;
+
+
+            this.horario = horario;
+
+
     }
 
     public boolean ProfessorDentroDoHorario() { //Verifica se o Professor está dentro do seu horario (caso esteja na hora de almoço dá return falso)

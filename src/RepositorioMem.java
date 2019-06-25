@@ -108,36 +108,40 @@ public class RepositorioMem implements Repositorio {
         disciplinaL.add(disciplina);
     }
 
-    public void entradaAlunoNaSala(SalaEstudo salaEstudo, Utilizador aluno){
+    public void entradaAlunoNaSala(SalaEstudo salaEstudo, Utilizador aluno) {
 
-        if(salaEstudo == null || aluno == null) return;
+        if (salaEstudo == null || aluno == null) return;
+        if (aluno.getDentroSaladeEstudo() == 1) {
+            System.out.println("Utilizador já se encontra dentro de uma sala de estudo!\n");
+        } else {
+            if (salaEstudo.SalaEstudoDentroDoHorario()) {
 
-        if(salaEstudo.SalaEstudoDentroDoHorario()) {
-
-            if (salaEstudo.addAlunoSala(aluno))
-                System.out.println("Foi efetuada uma nova entrada de aluno na sala!\n");
-            else
-                System.out.println("Nao foi efetuada a entrada do aluno na sala\n");
-        }else{
-            System.out.println("Sala de estudo encontra-se fechada");
+                if (salaEstudo.addAlunoSala(aluno)) {
+                    System.out.println("Foi efetuada uma nova entrada de aluno na sala!\n");
+                    aluno.setDentroSaladeEstudo(1);
+                } else
+                    System.out.println("Nao foi efetuada a entrada do aluno na sala\n");
+            } else {
+                System.out.println("Sala de estudo encontra-se fechada");
+            }
         }
-
     }
 
-    public void saidaAlunoNaSala(SalaEstudo salaEstudo , Utilizador aluno){
-        if(salaEstudo == null || aluno == null) return;
+    public void saidaAlunoNaSala(SalaEstudo salaEstudo, Utilizador aluno) {
+        if (salaEstudo == null || aluno == null) return;
 
-        if(salaEstudo.remAlunoSala(aluno))
+        if (salaEstudo.remAlunoSala(aluno)) {
             System.out.println("Foi efetuada o registo de saida do aluno da sala!\n");
-        else
+            aluno.setDentroSaladeEstudo(0);
+        } else
             System.out.println("Nao foi possivel efetuar o registo de saida do aluno!\n");
 
     }
 
-    public void FecharSalaDeAula(SalaEstudo salaEstudo){
-        if(salaEstudo == null) return;
+    public void FecharSalaDeAula(SalaEstudo salaEstudo) {
+        if (salaEstudo == null) return;
 
-        if(salaEstudo.FecharSala(salaEstudo)){
+        if (salaEstudo.FecharSala(salaEstudo)) {
             System.out.println("Sala de estudo foi fechada");
         }
 
@@ -151,8 +155,8 @@ public class RepositorioMem implements Repositorio {
         aluno.AddFicha(ficha);
     }
 
-    public void AlunoAvaliaFicha(Utilizador aluno,Fichas ficha,int AvaliacaoDificuldade) {
-        FeedbackFichas novoFeedback=new FeedbackFichas(aluno,ficha,AvaliacaoDificuldade);
+    public void AlunoAvaliaFicha(Utilizador aluno, Fichas ficha, int AvaliacaoDificuldade) {
+        FeedbackFichas novoFeedback = new FeedbackFichas(aluno, ficha, AvaliacaoDificuldade);
         aluno.AddFeedback(novoFeedback); //Adicionar novoFeedback ao Aluno
         ficha.AddFeedback(novoFeedback);//Adicionar novoFeedback à Ficha
 
@@ -162,16 +166,15 @@ public class RepositorioMem implements Repositorio {
 
     //4ºSprint
 
-    public void CriarHorarioProfessor(Funcionario funcionario, Professor professor, LocalTime Inicio, LocalTime fim,LocalTime inicioAlmoco,LocalTime fimAlmoco) {
-        funcionario.CriarHorarioProfessor(professor,Inicio,fim,inicioAlmoco,fimAlmoco);
+    public void CriarHorarioProfessor(Funcionario funcionario, Professor professor, LocalTime Inicio, LocalTime fim, LocalTime inicioAlmoco, LocalTime fimAlmoco) {
+        funcionario.CriarHorarioProfessor(professor, Inicio, fim, inicioAlmoco, fimAlmoco);
 
     }
 
     public void CriarHorarioSalaEstudos(Funcionario funcionario, SalaEstudo saladestudo, LocalTime Inicio, LocalTime fim) {
-        funcionario.CriarHorarioSalaEstudos(saladestudo,Inicio,fim);
+        funcionario.CriarHorarioSalaEstudos(saladestudo, Inicio, fim);
 
     }
-
 
 
 }

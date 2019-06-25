@@ -107,6 +107,9 @@ public class SalaEstudo {
 
         if (salaEstudo == null) return false;
 
+        for (Utilizador u : AlunosList) {
+            u.setDentroSaladeEstudo(0);
+        }
         AlunosList.removeAll(AlunosList); //Todos os alunos saiem da sala
         prof = null; //o professor sai da sala
         nLugaresDisponiveis=this.nLugares; //Visto que todos os alunos saiem da sala

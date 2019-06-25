@@ -29,13 +29,21 @@ public class Funcionario {
     }
 
     public void CriarHorarioProfessor( Professor professor, LocalTime Inicio, LocalTime fim,LocalTime inicioAlmoço,LocalTime fimAlmoço) {
-        Horario novohorario= new Horario(this,Inicio,fim,inicioAlmoço,fimAlmoço);
-        professor.setHorario(novohorario);
+        if(FuncionarioDentroDoHorario()) {
+            Horario novohorario = new Horario(this, Inicio, fim, inicioAlmoço, fimAlmoço);
+            professor.setHorario(novohorario);
+        }
+        else
+            System.out.println("Funcionario fora do Horário de trabalho pelo que não poderá realizar esta operação");
     }
 
     public void CriarHorarioSalaEstudos( SalaEstudo salaestudo, LocalTime Inicio, LocalTime fim) {
+        if(FuncionarioDentroDoHorario()) {
         Horario novohorario= new Horario(this,Inicio,fim,null,null);
         salaestudo.setHorarioSalaEstudo(novohorario);
+        }
+        else
+            System.out.println("Funcionario fora do Horário de trabalho pelo que não poderá realizar esta operação");
     }
 
     public void setnFuncionario(int nFuncionario) {
